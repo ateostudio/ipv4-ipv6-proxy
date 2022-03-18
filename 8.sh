@@ -56,8 +56,7 @@ setgid 65535
 setuid 65535
 stacksize 6291456 
 flush
-auth strong
-users UserName:CL:Password
+auth none
 EOF
 }
 gen_data() {
