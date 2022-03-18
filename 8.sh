@@ -56,7 +56,7 @@ setgid 65535
 setuid 65535
 stacksize 6291456 
 flush
-auth none
+auth strong
 
 users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
 
@@ -69,7 +69,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "$IP4/$port/$(gen64 $IP6)"
+        echo "UserName/Password/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
