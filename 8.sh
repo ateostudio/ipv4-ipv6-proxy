@@ -58,12 +58,11 @@ stacksize 6291456
 flush
 auth strong
 users UserName:CL:Password
-
+EOF
 }
-
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "UserName/Password/$IP4/$port/$(gen64 $IP6)"
+        echo "UserName/$Password/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
